@@ -3,231 +3,265 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Nagavamsi M — Full Stack Java Developer</title>
+<title>Nagavamsi M — Senior React Developer & Full Stack Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#070b10;
-  --bg2:#0d1219;
-  --bg3:#111827;
-  --border:#1e2d3d;
-  --border2:#243447;
-  --text:#e2e8f0;
-  --muted:#64748b;
-  --faint:#1a2535;
-  --accent:#00d4ff;
-  --accent2:#7c3aed;
-  --accent3:#10b981;
-  --accent4:#f59e0b;
-  --card:#0d1520;
+  --bg:#06080d;
+  --bg2:#0b0f17;
+  --bg3:#0f1520;
+  --border:#1a2535;
+  --border2:#243040;
+  --text:#dce6f0;
+  --muted:#5a6e82;
+  --faint:#111d2c;
+  --accent:#00c8f0;
+  --accent2:#8b5cf6;
+  --accent3:#10d98a;
+  --accent4:#f4a833;
+  --red:#f87171;
+  --card:#0a1018;
+  --font-head:'Syne',sans-serif;
+  --font-mono:'DM Mono',monospace;
 }
 html{scroll-behavior:smooth}
 body{
-  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-family:var(--font-mono);
   background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;
 }
+
+/* GRID BG */
 body::before{
   content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
   background-image:
-    linear-gradient(rgba(0,212,255,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,212,255,.025) 1px,transparent 1px);
-  background-size:52px 52px;
+    linear-gradient(rgba(0,200,240,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,200,240,.018) 1px,transparent 1px);
+  background-size:48px 48px;
 }
 
 /* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  height:60px;padding:0 2rem;
+  height:58px;padding:0 2rem;
   display:flex;align-items:center;justify-content:space-between;
-  background:rgba(7,11,16,.88);border-bottom:1px solid var(--border);
-  backdrop-filter:blur(16px);
+  background:rgba(6,8,13,.9);border-bottom:1px solid var(--border);
+  backdrop-filter:blur(20px);
 }
-.nav-logo{font-size:.95rem;font-weight:700;letter-spacing:.05em;color:var(--accent)}
-.nav-logo span{color:var(--text)}
+.nav-logo{font-family:var(--font-head);font-size:1rem;font-weight:800;color:var(--accent);letter-spacing:.04em}
+.nav-logo span{color:var(--muted);font-weight:400}
 .nav-links{display:flex;gap:2rem}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover{color:var(--accent)}
-.nav-resume{font-size:.78rem;font-weight:600;padding:.35rem .9rem;border:1px solid var(--accent);border-radius:6px;color:var(--accent);text-decoration:none;transition:all .2s;letter-spacing:.06em}
+.nav-resume{
+  font-family:var(--font-mono);font-size:.72rem;font-weight:500;
+  padding:.32rem .9rem;border:1px solid var(--accent);border-radius:4px;
+  color:var(--accent);text-decoration:none;transition:all .2s;letter-spacing:.08em;
+}
 .nav-resume:hover{background:var(--accent);color:#000}
 
 /* HERO */
 .hero{
   min-height:100vh;display:flex;align-items:center;
-  padding:7rem 2rem 4rem;max-width:1100px;margin:0 auto;
-  position:relative;z-index:1;gap:4rem;
+  padding:7rem 2rem 4rem;max-width:1120px;margin:0 auto;
+  position:relative;z-index:1;gap:5rem;
 }
 .hero-left{flex:1;min-width:0}
-.hero-right{flex:0 0 400px;display:flex;align-items:center;justify-content:center}
+.hero-right{flex:0 0 380px;display:flex;align-items:center;justify-content:center}
 
 .hero-eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--accent3);margin-bottom:1.25rem;
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent3);margin-bottom:1.4rem;font-family:var(--font-mono);
 }
-.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--accent3)}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--accent3)}
 
-h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.1;color:#fff;margin-bottom:.5rem}
-.h1-dim{color:var(--muted);font-weight:300}
+h1{
+  font-family:var(--font-head);
+  font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1.08;
+  color:#fff;margin-bottom:.6rem;letter-spacing:-.02em;
+}
+.h1-dim{color:var(--muted);font-weight:400}
 .h1-accent{
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  background:linear-gradient(100deg,var(--accent) 0%,var(--accent2) 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 
-.typing-wrap{font-family:'Courier New',monospace;font-size:1rem;color:var(--accent3);margin:1rem 0 1.5rem;height:1.6rem}
-.cursor{display:inline-block;width:2px;height:1em;background:var(--accent3);vertical-align:text-bottom;animation:blink .7s step-end infinite}
+.typing-wrap{
+  font-family:var(--font-mono);font-size:.92rem;color:var(--accent3);
+  margin:1.1rem 0 1.6rem;height:1.5rem;
+}
+.cursor{display:inline-block;width:2px;height:.9em;background:var(--accent3);vertical-align:text-bottom;animation:blink .65s step-end infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 
-.hero-sub{color:var(--muted);font-size:.95rem;max-width:480px;line-height:1.75;margin-bottom:2rem}
+.hero-sub{color:var(--muted);font-size:.88rem;max-width:500px;line-height:1.8;margin-bottom:2rem;font-family:var(--font-mono)}
 
-.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.hero-btns{display:flex;gap:.65rem;flex-wrap:wrap}
 .btn{
   display:inline-flex;align-items:center;gap:6px;
-  padding:.6rem 1.4rem;border-radius:8px;font-size:.85rem;
-  font-weight:600;text-decoration:none;transition:all .2s;
-  border:1px solid transparent;letter-spacing:.03em;
+  padding:.55rem 1.3rem;border-radius:5px;font-size:.8rem;
+  font-weight:500;text-decoration:none;transition:all .2s;
+  border:1px solid transparent;letter-spacing:.04em;
+  font-family:var(--font-mono);
 }
-.btn-glow{background:var(--accent);color:#000;box-shadow:0 0 20px rgba(0,212,255,.25)}
-.btn-glow:hover{box-shadow:0 0 36px rgba(0,212,255,.5);transform:translateY(-1px)}
+.btn-glow{background:var(--accent);color:#000;box-shadow:0 0 18px rgba(0,200,240,.2)}
+.btn-glow:hover{box-shadow:0 0 32px rgba(0,200,240,.45);transform:translateY(-1px)}
 .btn-ghost{background:transparent;color:var(--text);border-color:var(--border2)}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-.btn-amber{background:transparent;color:var(--accent4);border-color:rgba(245,158,11,.35)}
-.btn-amber:hover{background:rgba(245,158,11,.08);border-color:var(--accent4)}
+.btn-amber{background:transparent;color:var(--accent4);border-color:rgba(244,168,51,.3)}
+.btn-amber:hover{background:rgba(244,168,51,.07);border-color:var(--accent4)}
 
-.hero-stats{display:flex;gap:2rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
-.hstat-num{font-size:1.8rem;font-weight:800;color:var(--accent);line-height:1}
-.hstat-label{font-size:.72rem;color:var(--muted);margin-top:3px;letter-spacing:.06em;text-transform:uppercase}
-
-/* ── STACK ORBIT VISUAL ── */
-.orbit-wrap{
-  position:relative;width:360px;height:360px;flex-shrink:0;
+.hero-stats{
+  display:flex;gap:2.5rem;margin-top:2.5rem;padding-top:2rem;
+  border-top:1px solid var(--border);
 }
+.hstat-num{font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--accent);line-height:1}
+.hstat-label{font-size:.65rem;color:var(--muted);margin-top:4px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-mono)}
+
+/* ORBIT */
+.orbit-wrap{position:relative;width:360px;height:360px;flex-shrink:0}
 .orbit-ring{
-  position:absolute;border-radius:50%;border:1px solid rgba(0,212,255,.1);
+  position:absolute;border-radius:50%;
   top:50%;left:50%;transform:translate(-50%,-50%);
 }
-.ring1{width:360px;height:360px}
-.ring2{width:260px;height:260px;border-color:rgba(124,58,237,.12)}
-.ring3{width:160px;height:160px;border-color:rgba(16,185,129,.1)}
-
+.ring1{width:340px;height:340px;border:1px solid rgba(0,200,240,.08)}
+.ring2{width:240px;height:240px;border:1px solid rgba(139,92,246,.1)}
+.ring3{width:140px;height:140px;border:1px solid rgba(16,217,138,.08)}
 .orbit-center{
   position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:80px;height:80px;border-radius:50%;
-  background:#0d1520;border:2px solid var(--accent);
+  width:76px;height:76px;border-radius:50%;
+  background:var(--bg2);border:1.5px solid var(--accent);
   display:flex;align-items:center;justify-content:center;
-  font-size:.65rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;
-  text-align:center;line-height:1.3;
-  box-shadow:0 0 28px rgba(0,212,255,.2);
+  font-size:.58rem;font-weight:500;color:var(--accent);letter-spacing:.08em;
+  text-transform:uppercase;text-align:center;line-height:1.4;
+  box-shadow:0 0 24px rgba(0,200,240,.18);font-family:var(--font-mono);
 }
-
 .orbit-badge{
-  position:absolute;
-  font-size:.72rem;font-weight:600;
-  padding:4px 11px;border-radius:999px;border:1px solid;
+  position:absolute;font-size:.68rem;font-weight:500;
+  padding:3px 10px;border-radius:3px;border:1px solid;
   white-space:nowrap;cursor:default;
   transition:transform .2s,box-shadow .2s;
-  background:var(--bg2);
+  background:var(--bg2);font-family:var(--font-mono);
 }
-.orbit-badge:hover{transform:scale(1.12);box-shadow:0 0 16px rgba(0,212,255,.3)}
-.ob-cyan{color:var(--accent);border-color:rgba(0,212,255,.3)}
-.ob-purple{color:#a78bfa;border-color:rgba(167,139,250,.3)}
-.ob-green{color:var(--accent3);border-color:rgba(16,185,129,.3)}
-.ob-amber{color:var(--accent4);border-color:rgba(245,158,11,.3)}
+.orbit-badge:hover{transform:scale(1.1);box-shadow:0 0 12px rgba(0,200,240,.25)}
+.ob-cyan{color:var(--accent);border-color:rgba(0,200,240,.25)}
+.ob-purple{color:#a78bfa;border-color:rgba(167,139,250,.25)}
+.ob-green{color:var(--accent3);border-color:rgba(16,217,138,.25)}
+.ob-amber{color:var(--accent4);border-color:rgba(244,168,51,.25)}
 
 /* SECTIONS */
-.section{max-width:1100px;margin:0 auto;padding:5rem 2rem;position:relative;z-index:1}
+.section{max-width:1120px;margin:0 auto;padding:5rem 2rem;position:relative;z-index:1}
 .sec-label{
   display:inline-flex;align-items:center;gap:8px;
-  font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:.75rem;
+  font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:.7rem;font-family:var(--font-mono);
 }
-.sec-label::after{content:'';flex:0 0 32px;height:1px;background:var(--accent);opacity:.5}
-.sec-title{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:#fff;margin-bottom:.5rem}
-.sec-sub{color:var(--muted);font-size:.9rem;max-width:520px;line-height:1.7}
-.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2) 30%,var(--border2) 70%,transparent);max-width:1100px;margin:0 auto}
+.sec-label::after{content:'';flex:0 0 28px;height:1px;background:var(--accent);opacity:.4}
+.sec-title{font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#fff;margin-bottom:.5rem;letter-spacing:-.02em}
+.sec-sub{color:var(--muted);font-size:.84rem;max-width:520px;line-height:1.75;font-family:var(--font-mono)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2) 30%,var(--border2) 70%,transparent);max-width:1120px;margin:0 auto}
 
-/* SKILLS */
+/* SKILLS GRID */
 .skills-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;
-  border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:2.5rem;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:1px;border:1px solid var(--border);border-radius:10px;
+  overflow:hidden;margin-top:2.5rem;
 }
-.sk-card{background:var(--card);padding:1.4rem 1.5rem;transition:background .2s}
-.sk-card:hover{background:#0f1c2a}
-.sk-head{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
-.sk-icon{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
-.sk-name{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text)}
-.sk-tags{display:flex;flex-wrap:wrap;gap:5px}
-.stag{font-size:.72rem;padding:2px 9px;border-radius:999px;border:1px solid;font-weight:500}
-.st-cyan{color:var(--accent);border-color:rgba(0,212,255,.25);background:rgba(0,212,255,.06)}
-.st-purple{color:#a78bfa;border-color:rgba(167,139,250,.25);background:rgba(167,139,250,.06)}
-.st-green{color:var(--accent3);border-color:rgba(16,185,129,.25);background:rgba(16,185,129,.06)}
-.st-amber{color:var(--accent4);border-color:rgba(245,158,11,.25);background:rgba(245,158,11,.06)}
-.st-gray{color:#94a3b8;border-color:rgba(148,163,184,.2);background:rgba(148,163,184,.05)}
+.sk-card{background:var(--card);padding:1.3rem 1.4rem;transition:background .2s}
+.sk-card:hover{background:#0d1825}
+.sk-head{display:flex;align-items:center;gap:.55rem;margin-bottom:.9rem}
+.sk-icon{width:28px;height:28px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.sk-name{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text);font-family:var(--font-mono)}
+.sk-tags{display:flex;flex-wrap:wrap;gap:4px}
+.stag{font-size:.68rem;padding:2px 8px;border-radius:3px;border:1px solid;font-weight:400;font-family:var(--font-mono)}
+.st-cyan{color:var(--accent);border-color:rgba(0,200,240,.2);background:rgba(0,200,240,.05)}
+.st-purple{color:#a78bfa;border-color:rgba(167,139,250,.2);background:rgba(167,139,250,.05)}
+.st-green{color:var(--accent3);border-color:rgba(16,217,138,.2);background:rgba(16,217,138,.05)}
+.st-amber{color:var(--accent4);border-color:rgba(244,168,51,.2);background:rgba(244,168,51,.05)}
+.st-gray{color:#8a9ab0;border-color:rgba(138,154,176,.18);background:rgba(138,154,176,.04)}
 
 /* EXPERIENCE */
-.exp-grid{display:flex;flex-direction:column;gap:1rem;margin-top:2.5rem}
+.exp-grid{display:flex;flex-direction:column;gap:.75rem;margin-top:2.5rem}
 .exp-card{
-  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
   overflow:hidden;transition:border-color .25s,transform .2s;cursor:pointer;
 }
-.exp-card:hover{border-color:var(--border2);transform:translateX(4px)}
-.exp-card.active{border-color:rgba(0,212,255,.35)}
-.exp-header{display:grid;grid-template-columns:6px 1fr}
-.exp-bar{border-radius:14px 0 0 0}
-.exp-card.active .exp-bar{border-radius:14px 0 0 14px}
-.exp-header-body{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.25rem;padding:1.1rem 1.4rem}
-.exp-role{font-size:.95rem;font-weight:700;color:#fff}
-.exp-co{font-size:.78rem;font-weight:600;padding:2px 10px;border-radius:5px;border:1px solid}
-.exp-period{margin-left:auto;font-size:.72rem;color:var(--muted);display:flex;align-items:center;gap:5px}
+.exp-card:hover{border-color:var(--border2);transform:translateX(3px)}
+.exp-card.active{border-color:rgba(0,200,240,.3)}
+.exp-header{display:grid;grid-template-columns:5px 1fr}
+.exp-bar{border-radius:10px 0 0 0}
+.exp-card.active .exp-bar{border-radius:10px 0 0 10px}
+.exp-header-body{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.1rem;padding:1rem 1.3rem}
+.exp-role{font-family:var(--font-head);font-size:.92rem;font-weight:700;color:#fff}
+.exp-co{font-size:.72rem;font-weight:500;padding:2px 9px;border-radius:3px;border:1px solid;font-family:var(--font-mono)}
+.exp-period{margin-left:auto;font-size:.68rem;color:var(--muted);display:flex;align-items:center;gap:5px;font-family:var(--font-mono)}
 .exp-pdot{width:5px;height:5px;border-radius:50%}
-.exp-body{max-height:0;overflow:hidden;transition:max-height .4s ease;border-top:0px solid var(--border)}
-.exp-card.active .exp-body{max-height:600px;border-top-width:1px}
-.exp-body-inner{padding:1.1rem 1.4rem 1.25rem}
-.exp-location{font-size:.75rem;color:var(--muted);margin-bottom:.85rem}
+.exp-body{max-height:0;overflow:hidden;transition:max-height .45s ease;border-top:0px solid var(--border)}
+.exp-card.active .exp-body{max-height:700px;border-top-width:1px}
+.exp-body-inner{padding:1rem 1.3rem 1.2rem}
+.exp-location{font-size:.72rem;color:var(--muted);margin-bottom:.8rem;font-family:var(--font-mono)}
 .exp-points{list-style:none;padding:0;margin:0 0 1rem}
-.exp-points li{position:relative;padding-left:1.2rem;font-size:.85rem;color:#94a3b8;margin-bottom:.35rem;line-height:1.55}
-.exp-points li::before{content:'';position:absolute;left:2px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--border2)}
-.exp-env{display:flex;flex-wrap:wrap;gap:5px;padding-top:.85rem;border-top:1px solid var(--border)}
+.exp-points li{
+  position:relative;padding-left:1.2rem;
+  font-size:.82rem;color:#8a9ab0;margin-bottom:.32rem;line-height:1.6;
+  font-family:var(--font-mono);
+}
+.exp-points li::before{content:'';position:absolute;left:2px;top:9px;width:4px;height:4px;border-radius:50%;background:var(--border2)}
+.exp-env{display:flex;flex-wrap:wrap;gap:4px;padding-top:.8rem;border-top:1px solid var(--border)}
+.exp-techline{font-size:.7rem;color:var(--muted);margin-bottom:.7rem;font-family:var(--font-mono);font-style:italic}
+.exp-techline span{color:#8a9ab0}
+
+/* company color themes */
 .ec1 .exp-bar{background:var(--accent)}
-.ec1 .exp-co{color:var(--accent);border-color:rgba(0,212,255,.25);background:rgba(0,212,255,.07)}
+.ec1 .exp-co{color:var(--accent);border-color:rgba(0,200,240,.22);background:rgba(0,200,240,.06)}
 .ec1 .exp-pdot{background:var(--accent);animation:blink .7s step-end infinite}
 .ec2 .exp-bar{background:#a78bfa}
-.ec2 .exp-co{color:#a78bfa;border-color:rgba(167,139,250,.25);background:rgba(167,139,250,.07)}
+.ec2 .exp-co{color:#a78bfa;border-color:rgba(167,139,250,.22);background:rgba(167,139,250,.06)}
 .ec2 .exp-pdot{background:#a78bfa}
 .ec3 .exp-bar{background:var(--accent4)}
-.ec3 .exp-co{color:var(--accent4);border-color:rgba(245,158,11,.25);background:rgba(245,158,11,.07)}
+.ec3 .exp-co{color:var(--accent4);border-color:rgba(244,168,51,.22);background:rgba(244,168,51,.06)}
 .ec3 .exp-pdot{background:var(--accent4)}
-.ec4 .exp-bar{background:#f87171}
-.ec4 .exp-co{color:#f87171;border-color:rgba(248,113,113,.25);background:rgba(248,113,113,.07)}
-.ec4 .exp-pdot{background:#f87171}
+.ec4 .exp-bar{background:var(--red)}
+.ec4 .exp-co{color:var(--red);border-color:rgba(248,113,113,.22);background:rgba(248,113,113,.06)}
+.ec4 .exp-pdot{background:var(--red)}
 .ec5 .exp-bar{background:var(--accent3)}
-.ec5 .exp-co{color:var(--accent3);border-color:rgba(16,185,129,.25);background:rgba(16,185,129,.07)}
+.ec5 .exp-co{color:var(--accent3);border-color:rgba(16,217,138,.22);background:rgba(16,217,138,.06)}
 .ec5 .exp-pdot{background:var(--accent3)}
 
 /* CONTACT */
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2.5rem}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin-top:2.5rem}
 .c-card{
-  background:var(--card);border:1px solid var(--border);border-radius:12px;
-  padding:1.25rem 1.4rem;text-decoration:none;color:var(--text);
-  display:flex;align-items:center;gap:.85rem;transition:border-color .2s,transform .2s;
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1.15rem 1.3rem;text-decoration:none;color:var(--text);
+  display:flex;align-items:center;gap:.8rem;transition:border-color .2s,transform .2s;
 }
 .c-card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.c-icon{width:38px;height:38px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.15);font-size:16px}
-.c-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
-.c-val{font-size:.88rem;font-weight:500;margin-top:1px}
+.c-icon{
+  width:36px;height:36px;border-radius:7px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(0,200,240,.07);border:1px solid rgba(0,200,240,.12);font-size:15px;
+}
+.c-label{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-family:var(--font-mono)}
+.c-val{font-size:.84rem;font-weight:500;margin-top:2px;font-family:var(--font-mono)}
 
 /* ORBS */
-.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(90px);opacity:.1}
-.orb1{width:500px;height:500px;background:var(--accent);top:-150px;right:-100px}
-.orb2{width:400px;height:400px;background:var(--accent2);bottom:10%;left:-120px}
+.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(100px);opacity:.08}
+.orb1{width:480px;height:480px;background:var(--accent);top:-120px;right:-80px}
+.orb2{width:360px;height:360px;background:var(--accent2);bottom:15%;left:-100px}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
 .reveal.visible{opacity:1;transform:none}
 
-footer{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;border-top:1px solid var(--border);position:relative;z-index:1;letter-spacing:.04em}
+footer{
+  text-align:center;padding:2rem;color:var(--muted);
+  font-size:.72rem;border-top:1px solid var(--border);
+  position:relative;z-index:1;letter-spacing:.06em;font-family:var(--font-mono);
+}
 
 @media(max-width:768px){
-  .hero{flex-direction:column;gap:2.5rem;padding:6rem 1.5rem 3rem}
+  .hero{flex-direction:column;gap:2rem;padding:6rem 1.25rem 3rem}
   .hero-right{display:none}
   .hero-stats{gap:1.5rem}
   nav .nav-links{display:none}
@@ -241,20 +275,20 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;border
 <div class="orb orb2"></div>
 
 <nav>
-  <div class="nav-logo">NM<span style="color:var(--muted)"> / portfolio</span></div>
+  <div class="nav-logo">NM<span> / portfolio</span></div>
   <div class="nav-links">
     <a href="#about">about</a>
     <a href="#skills">skills</a>
     <a href="#experience">experience</a>
     <a href="#contact">contact</a>
   </div>
-  <a href="Nagavamsi_M.docx" download class="nav-resume">resume ↓</a>
+  <a href="Nagavamsi.Meduri.docx" download class="nav-resume">resume ↓</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="about">
   <div class="hero-left">
-    <div class="hero-eyebrow">Full Stack Engineer · 8+ Years</div>
+    <div class="hero-eyebrow">Senior React Developer · 8+ Years</div>
     <h1>
       Building<br>
       <span class="h1-accent">Scalable Systems</span><br>
@@ -264,12 +298,12 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;border
       <span id="typed-text"></span><span class="cursor"></span>
     </div>
     <p class="hero-sub">
-      Java / Spring Boot &amp; React engineer with a decade of enterprise experience across fintech, energy, and big tech. From Discover to Apple — I build backends that scale and frontends that stick.
+      React / TypeScript / Redux / Node.js engineer with 8+ years across fintech, energy, and big tech. From Discover Financial to Apple — I build front-ends that perform and back-ends that scale.
     </p>
     <div class="hero-btns">
       <a href="mailto:nagavamsi532@gmail.com" class="btn btn-glow">Get in touch →</a>
       <a href="#experience" class="btn btn-ghost">View experience</a>
-      <a href="Nagavamsi_M.docx" download class="btn btn-amber">⬇ Resume</a>
+      <a href="Nagavamsi_M_2Page.docx" download class="btn btn-amber">⬇ Resume</a>
     </div>
     <div class="hero-stats">
       <div>
@@ -278,7 +312,11 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;border
       </div>
       <div>
         <div class="hstat-num" id="cnt-clients">0</div>
-        <div class="hstat-label">Clients</div>
+        <div class="hstat-label">Companies</div>
+      </div>
+      <div>
+        <div class="hstat-num" id="cnt-cov">0</div>
+        <div class="hstat-label">% Code Coverage</div>
       </div>
       <div>
         <div class="hstat-num" id="cnt-tech">0</div>
@@ -287,13 +325,13 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;border
     </div>
   </div>
 
-  <!-- ORBIT VISUAL -->
+  <!-- ORBIT -->
   <div class="hero-right">
     <div class="orbit-wrap" id="orbit-wrap">
       <div class="orbit-ring ring1"></div>
       <div class="orbit-ring ring2"></div>
       <div class="orbit-ring ring3"></div>
-      <div class="orbit-center">Full<br>Stack<br>Dev</div>
+      <div class="orbit-center">React<br>+<br>Node.js</div>
     </div>
   </div>
 </section>
@@ -304,78 +342,109 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;border
 <section class="section reveal" id="skills">
   <div class="sec-label">expertise</div>
   <h2 class="sec-title">Technical stack</h2>
-  <p class="sec-sub">8+ years across the full product lifecycle — from microservices to pixel-perfect UIs.</p>
+  <p class="sec-sub">8+ years across the full product lifecycle — from scalable Node.js APIs to pixel-perfect React UIs.</p>
   <div class="skills-grid">
+
     <div class="sk-card">
       <div class="sk-head">
         <div class="sk-icon" style="background:rgba(167,139,250,.1);color:#a78bfa">⚡</div>
-        <span class="sk-name">Frontend</span>
+        <span class="sk-name">React Ecosystem</span>
       </div>
       <div class="sk-tags">
-        <span class="stag st-purple">React</span><span class="stag st-purple">TypeScript</span>
-        <span class="stag st-purple">Angular JS</span><span class="stag st-purple">Node.js</span>
-        <span class="stag st-purple">HTML5/CSS3</span><span class="stag st-purple">JavaScript</span>
-        <span class="stag st-purple">jQuery</span>
+        <span class="stag st-purple">React.js 18</span>
+        <span class="stag st-purple">Redux Toolkit</span>
+        <span class="stag st-purple">RTK Query</span>
+        <span class="stag st-purple">Context API</span>
+        <span class="stag st-purple">React Query</span>
+        <span class="stag st-purple">Next.js</span>
+        <span class="stag st-purple">React Router</span>
+        <span class="stag st-purple">React Hooks</span>
       </div>
     </div>
+
     <div class="sk-card">
       <div class="sk-head">
-        <div class="sk-icon" style="background:rgba(0,212,255,.1);color:var(--accent)">☕</div>
-        <span class="sk-name">Backend</span>
+        <div class="sk-icon" style="background:rgba(0,200,240,.1);color:var(--accent)">◈</div>
+        <span class="sk-name">Node.js & APIs</span>
       </div>
       <div class="sk-tags">
-        <span class="stag st-cyan">Java / J2EE</span><span class="stag st-cyan">Spring Boot</span>
-        <span class="stag st-cyan">Spring Cloud</span><span class="stag st-cyan">Spring MVC</span>
-        <span class="stag st-cyan">Hibernate</span><span class="stag st-cyan">REST API</span>
-        <span class="stag st-cyan">Microservices</span><span class="stag st-cyan">SOAP/WSDL</span>
+        <span class="stag st-cyan">Node.js</span>
+        <span class="stag st-cyan">Express.js</span>
+        <span class="stag st-cyan">TSOA</span>
+        <span class="stag st-cyan">REST API</span>
+        <span class="stag st-cyan">GraphQL</span>
+        <span class="stag st-cyan">gRPC</span>
+        <span class="stag st-cyan">OAuth2 / JWT</span>
+        <span class="stag st-cyan">Webhook Handlers</span>
+        <span class="stag st-cyan">Microservices</span>
       </div>
     </div>
+
     <div class="sk-card">
       <div class="sk-head">
-        <div class="sk-icon" style="background:rgba(16,185,129,.1);color:var(--accent3)">🗄</div>
+        <div class="sk-icon" style="background:rgba(167,139,250,.1);color:#a78bfa">{ }</div>
+        <span class="sk-name">Languages</span>
+      </div>
+      <div class="sk-tags">
+        <span class="stag st-purple">TypeScript</span>
+        <span class="stag st-purple">JavaScript ES6+</span>
+        <span class="stag st-purple">Java 8/11/17</span>
+        <span class="stag st-purple">Kotlin</span>
+        <span class="stag st-purple">SQL / PL-SQL</span>
+        <span class="stag st-purple">HTML5 / CSS3</span>
+      </div>
+    </div>
+
+    <div class="sk-card">
+      <div class="sk-head">
+        <div class="sk-icon" style="background:rgba(16,217,138,.1);color:var(--accent3)">🗄</div>
         <span class="sk-name">Databases</span>
       </div>
       <div class="sk-tags">
-        <span class="stag st-green">Oracle</span><span class="stag st-green">MySQL</span>
-        <span class="stag st-green">MongoDB</span><span class="stag st-green">Cassandra</span>
-        <span class="stag st-green">JDBC</span><span class="stag st-green">PL/SQL</span>
+        <span class="stag st-green">PostgreSQL</span>
+        <span class="stag st-green">MySQL</span>
+        <span class="stag st-green">MongoDB</span>
+        <span class="stag st-green">Oracle</span>
+        <span class="stag st-green">Cassandra</span>
+        <span class="stag st-green">IBM DB2</span>
       </div>
     </div>
+
     <div class="sk-card">
       <div class="sk-head">
-        <div class="sk-icon" style="background:rgba(245,158,11,.1);color:var(--accent4)">☁</div>
-        <span class="sk-name">DevOps / Cloud</span>
+        <div class="sk-icon" style="background:rgba(244,168,51,.1);color:var(--accent4)">☁</div>
+        <span class="sk-name">Cloud & DevOps</span>
       </div>
       <div class="sk-tags">
-        <span class="stag st-amber">AWS EC2/S3</span><span class="stag st-amber">Docker</span>
-        <span class="stag st-amber">Kubernetes</span><span class="stag st-amber">Jenkins</span>
-        <span class="stag st-amber">CI/CD</span><span class="stag st-amber">Helm</span>
-        <span class="stag st-amber">Git/GitHub</span>
+        <span class="stag st-amber">AWS EC2/S3/RDS</span>
+        <span class="stag st-amber">Docker</span>
+        <span class="stag st-amber">Kubernetes</span>
+        <span class="stag st-amber">Helm</span>
+        <span class="stag st-amber">Jenkins</span>
+        <span class="stag st-amber">GitLab CI/CD</span>
+        <span class="stag st-amber">OpenShift</span>
+        <span class="stag st-amber">GitHub Actions</span>
       </div>
     </div>
+
     <div class="sk-card">
       <div class="sk-head">
-        <div class="sk-icon" style="background:rgba(148,163,184,.08);color:#94a3b8">🔧</div>
-        <span class="sk-name">Tools</span>
+        <div class="sk-icon" style="background:rgba(138,154,176,.08);color:#8a9ab0">✓</div>
+        <span class="sk-name">Testing & Tools</span>
       </div>
       <div class="sk-tags">
-        <span class="stag st-gray">Maven</span><span class="stag st-gray">Gradle</span>
-        <span class="stag st-gray">JUnit</span><span class="stag st-gray">Selenium</span>
-        <span class="stag st-gray">JIRA</span><span class="stag st-gray">Postman</span>
-        <span class="stag st-gray">ELK Stack</span><span class="stag st-gray">Storybook</span>
+        <span class="stag st-gray">Jest</span>
+        <span class="stag st-gray">React Testing Library</span>
+        <span class="stag st-gray">Playwright</span>
+        <span class="stag st-gray">Cypress</span>
+        <span class="stag st-gray">Supertest</span>
+        <span class="stag st-gray">Storybook</span>
+        <span class="stag st-gray">ESLint / Prettier</span>
+        <span class="stag st-gray">Postman</span>
+        <span class="stag st-gray">JIRA</span>
       </div>
     </div>
-    <div class="sk-card">
-      <div class="sk-head">
-        <div class="sk-icon" style="background:rgba(0,212,255,.08);color:var(--accent)">◎</div>
-        <span class="sk-name">Methodology</span>
-      </div>
-      <div class="sk-tags">
-        <span class="stag st-cyan">Agile/Scrum</span><span class="stag st-cyan">TDD</span>
-        <span class="stag st-cyan">OOP</span><span class="stag st-cyan">Design Patterns</span>
-        <span class="stag st-cyan">RAD</span>
-      </div>
-    </div>
+
   </div>
 </section>
 
@@ -385,68 +454,78 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;border
 <section class="section reveal" id="experience">
   <div class="sec-label">career</div>
   <h2 class="sec-title">Professional experience</h2>
-  <p class="sec-sub">Click any role to expand — 5 enterprise clients across fintech, energy, banking &amp; big tech.</p>
+  <p class="sec-sub">Click any role to expand — 5 enterprise clients across fintech, energy, banking & big tech.</p>
   <div class="exp-grid">
 
+    <!-- Discover -->
     <div class="exp-card ec1 active" onclick="toggleExp(this)">
       <div class="exp-header">
         <div class="exp-bar"></div>
         <div class="exp-header-body">
-          <span class="exp-role">Full Stack Developer</span>
-          <span class="exp-co">Discover Financial</span>
+          <span class="exp-role">Senior React Developer / Full Stack</span>
+          <span class="exp-co">Discover Financial Services</span>
           <span class="exp-period"><span class="exp-pdot"></span>Feb 2025 – Present</span>
         </div>
       </div>
       <div class="exp-body"><div class="exp-body-inner">
         <div class="exp-location">📍 Chicago, IL</div>
         <ul class="exp-points">
-          <li>Designed and deployed multi-tier distributed web applications for enterprise environments.</li>
-          <li>Built complex UI components using React and Material-UI — custom DataGrids, modals, and dynamic forms.</li>
-          <li>Implemented advanced state management with React Context API for auth and global navigation.</li>
-          <li>Integrated Playwright and Jest for comprehensive UI testing and automated regression suites.</li>
-          <li>Developed RESTful APIs with Express and TSOA supporting CRUD operations and aggregation pipelines.</li>
-          <li>Automated CI/CD workflows using shell scripts and Helm for OpenShift multi-environment releases.</li>
+          <li>Architected reusable React 18 component library — DataGrids, modals, dynamic forms, org-hierarchy visualizers — using TypeScript and Material-UI, cutting data-entry time by 30%.</li>
+          <li>Engineered global state management with Redux Toolkit and React Context API for auth flows, role-based navigation, and real-time data sync across enterprise dashboards.</li>
+          <li>Built and deployed Node.js / Express.js REST APIs with TSOA for type-safe routing; CRUD, aggregation pipelines, and advanced filtering for LeanIX and user-management services.</li>
+          <li>Designed Node.js middleware for request validation, error handling, and JWT authentication, enforcing consistent API security across all service endpoints.</li>
+          <li>Developed Node.js webhook handlers for Stripe and PayPal enabling real-time payment processing and event-driven financial workflow automation.</li>
+          <li>Wrote Supertest integration tests for all Node.js/Express endpoints achieving 85%+ back-end coverage alongside Jest and Playwright front-end suites.</li>
+          <li>Optimized React performance via Hooks, code splitting, lazy loading, debounced pagination — reducing re-renders by 40% and improving TTI by 35%.</li>
+          <li>Automated CI/CD with Helm on OpenShift for multi-environment zero-downtime deployments.</li>
         </ul>
+        <div class="exp-techline"><span>Tech Stack:</span> React 18, TypeScript, Redux Toolkit, Node.js, Express.js, TSOA, Material-UI, Jest, Supertest, Playwright, Storybook, Helm, OpenShift</div>
         <div class="exp-env">
-          <span class="stag st-cyan">TypeScript</span><span class="stag st-cyan">React</span>
-          <span class="stag st-cyan">Node.js</span><span class="stag st-cyan">Spring Boot</span>
-          <span class="stag st-amber">Jenkins</span><span class="stag st-amber">GitLab</span><span class="stag st-amber">OpenShift</span>
+          <span class="stag st-purple">React 18</span><span class="stag st-purple">TypeScript</span>
+          <span class="stag st-purple">Redux Toolkit</span><span class="stag st-cyan">Node.js</span>
+          <span class="stag st-cyan">Express.js</span><span class="stag st-cyan">TSOA</span>
+          <span class="stag st-amber">OpenShift</span><span class="stag st-amber">Helm</span>
+          <span class="stag st-gray">Jest</span><span class="stag st-gray">Playwright</span>
         </div>
       </div></div>
     </div>
 
+    <!-- Apple -->
     <div class="exp-card ec2" onclick="toggleExp(this)">
       <div class="exp-header">
         <div class="exp-bar"></div>
         <div class="exp-header-body">
-          <span class="exp-role">Java Backend Developer</span>
-          <span class="exp-co">Apple</span>
+          <span class="exp-role">Senior Full Stack Developer</span>
+          <span class="exp-co">Apple Inc.</span>
           <span class="exp-period"><span class="exp-pdot"></span>Jul 2024 – Jan 2025</span>
         </div>
       </div>
       <div class="exp-body"><div class="exp-body-inner">
         <div class="exp-location">📍 Austin, TX</div>
         <ul class="exp-points">
-          <li>Built and maintained RESTful APIs for smooth data exchange across enterprise applications.</li>
-          <li>Modeled data using Oracle (relational) and Cassandra (NoSQL) for efficient storage and retrieval.</li>
-          <li>Deployed applications on AWS using EC2, S3, and RDS ensuring high reliability and scalability.</li>
-          <li>Developed microservices with Spring Boot + Kotlin DSL enabling modular independent components.</li>
-          <li>Implemented OAuth2 and JWT security for RESTful APIs enhancing data protection.</li>
-          <li>Established ELK Stack logging and auditing for compliance tracking.</li>
+          <li>Designed scalable microservices using Spring Boot and Kotlin; built Node.js utility services for internal tooling and data processing pipelines.</li>
+          <li>Created Node.js automation scripts for data ingestion and transformation workflows, reducing manual processing time by 20%.</li>
+          <li>Implemented OAuth2 and JWT authentication across REST APIs for both Node.js and Java services, meeting enterprise security and compliance standards.</li>
+          <li>Delivered end-to-end TypeScript test coverage using Jest, Mocha, and Cypress across all release cycles.</li>
+          <li>Championed TDD and CI/CD with Jenkins and GitLab, shortening release cycles and reducing production defects by 25%.</li>
+          <li>Integrated Apple Pay and third-party payment SDKs with PCI-DSS-compliant tokenization, authorization, and settlement flows.</li>
         </ul>
+        <div class="exp-techline"><span>Tech Stack:</span> Node.js, Java, Kotlin, Spring Boot, TypeScript, Jest, Cypress, AWS (EC2/S3/RDS), OAuth2, JWT, ELK Stack, Jenkins, GitLab CI/CD</div>
         <div class="exp-env">
-          <span class="stag st-cyan">Java</span><span class="stag st-cyan">Spring Boot</span>
-          <span class="stag st-cyan">Kotlin</span><span class="stag st-green">Oracle</span>
-          <span class="stag st-green">Cassandra</span><span class="stag st-amber">AWS</span>
+          <span class="stag st-cyan">Node.js</span><span class="stag st-cyan">Java</span>
+          <span class="stag st-cyan">Kotlin</span><span class="stag st-cyan">Spring Boot</span>
+          <span class="stag st-purple">TypeScript</span><span class="stag st-amber">AWS</span>
+          <span class="stag st-gray">Jest</span><span class="stag st-gray">Cypress</span>
         </div>
       </div></div>
     </div>
 
+    <!-- DTE -->
     <div class="exp-card ec3" onclick="toggleExp(this)">
       <div class="exp-header">
         <div class="exp-bar"></div>
         <div class="exp-header-body">
-          <span class="exp-role">Full Stack Java Developer</span>
+          <span class="exp-role">Full Stack React Developer</span>
           <span class="exp-co">DTE Energy</span>
           <span class="exp-period"><span class="exp-pdot"></span>Nov 2023 – Jun 2024</span>
         </div>
@@ -454,51 +533,55 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;border
       <div class="exp-body"><div class="exp-body-inner">
         <div class="exp-location">📍 Detroit, MI</div>
         <ul class="exp-points">
-          <li>Developed REST APIs using Java for seamless service communication.</li>
-          <li>Implemented microservices on AWS with Spring Boot enabling inter-service communication via REST.</li>
-          <li>Designed CI/CD pipelines automating build, test, and deployment for Java projects.</li>
-          <li>Deployed Java applications on Kubernetes clusters using Helm charts and Operators.</li>
-          <li>Implemented MongoDB for efficient data storage in high-traffic environments.</li>
+          <li>Developed responsive React dashboards with HTML5, CSS3, and Bootstrap for energy management stakeholders.</li>
+          <li>Built Node.js/Express microservices exposing energy data APIs and real-time dashboard feeds integrated with Spring Boot back-end systems.</li>
+          <li>Implemented Node.js ETL scripts for processing large energy datasets before MongoDB ingestion.</li>
+          <li>Deployed CI/CD pipelines with Jenkins and Maven, automating build-test-deploy and cutting release time by 35%.</li>
+          <li>Integrated MongoDB for high-throughput data storage and optimized queries for high-traffic production scenarios.</li>
         </ul>
+        <div class="exp-techline"><span>Tech Stack:</span> React, Node.js, Express.js, Java 8, Spring Boot, HTML5, CSS3, AWS, Kubernetes, Helm, Jenkins, MongoDB</div>
         <div class="exp-env">
-          <span class="stag st-cyan">Java 1.8</span><span class="stag st-purple">Angular JS</span>
+          <span class="stag st-purple">React</span><span class="stag st-cyan">Node.js</span>
+          <span class="stag st-cyan">Express.js</span><span class="stag st-cyan">Java 8</span>
           <span class="stag st-green">MongoDB</span><span class="stag st-amber">AWS</span>
           <span class="stag st-amber">Kubernetes</span><span class="stag st-amber">Helm</span>
         </div>
       </div></div>
     </div>
 
+    <!-- HSBC -->
     <div class="exp-card ec4" onclick="toggleExp(this)">
       <div class="exp-header">
         <div class="exp-bar"></div>
         <div class="exp-header-body">
-          <span class="exp-role">Java Developer</span>
-          <span class="exp-co">HSBC</span>
+          <span class="exp-role">Full Stack Developer</span>
+          <span class="exp-co">HSBC Bank</span>
           <span class="exp-period"><span class="exp-pdot"></span>Oct 2018 – Dec 2021</span>
         </div>
       </div>
       <div class="exp-body"><div class="exp-body-inner">
         <div class="exp-location">📍 Pune, India</div>
         <ul class="exp-points">
-          <li>Implemented Agile methodology through all phases from requirements to deployment.</li>
-          <li>Built Single Page Apps using Angular JS/TypeScript and Bootstrap 4 for responsive design.</li>
-          <li>Developed custom Kotlin DSLs for configuration management reducing boilerplate.</li>
-          <li>Used Spring IOC/Dependency Injection for loose coupling across application layers.</li>
-          <li>Implemented CI with Jenkins and Docker to automate compilation and continuous delivery.</li>
+          <li>Built responsive SPAs using Angular, TypeScript, and Bootstrap 4 for a retail banking portal, cutting customer support calls by 30%.</li>
+          <li>Implemented JMS and WebSocket real-time payment notifications improving payment visibility and customer experience.</li>
+          <li>Ensured PCI-DSS compliance via data encryption, secure token storage, and audit logging for all cardholder data interactions.</li>
+          <li>Configured Jenkins CI/CD with Docker for automated testing and containerized delivery across environments.</li>
         </ul>
+        <div class="exp-techline"><span>Tech Stack:</span> Angular, TypeScript, Spring MVC, Hibernate, JMS, Bootstrap, Docker, Jenkins, MySQL, WebSocket, ISO 20022, PCI-DSS</div>
         <div class="exp-env">
-          <span class="stag st-cyan">Java 1.8</span><span class="stag st-cyan">Spring MVC</span>
-          <span class="stag st-purple">Angular JS</span><span class="stag st-green">MySQL</span>
+          <span class="stag st-purple">Angular</span><span class="stag st-purple">TypeScript</span>
+          <span class="stag st-cyan">Spring MVC</span><span class="stag st-green">MySQL</span>
           <span class="stag st-amber">Docker</span><span class="stag st-amber">Jenkins</span>
         </div>
       </div></div>
     </div>
 
+    <!-- CenterPoint -->
     <div class="exp-card ec5" onclick="toggleExp(this)">
       <div class="exp-header">
         <div class="exp-bar"></div>
         <div class="exp-header-body">
-          <span class="exp-role">Java Developer</span>
+          <span class="exp-role">Full Stack Developer</span>
           <span class="exp-co">CenterPoint Energy</span>
           <span class="exp-period"><span class="exp-pdot"></span>May 2016 – Sep 2018</span>
         </div>
@@ -506,16 +589,16 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;border
       <div class="exp-body"><div class="exp-body-inner">
         <div class="exp-location">📍 Pune, India</div>
         <ul class="exp-points">
-          <li>Developed front-end using HTML, CSS, JSP, AJAX, jQuery, Bootstrap, and Angular JS.</li>
-          <li>Developed Spring controller classes and validators using Spring MVC Framework.</li>
-          <li>Created TypeScript reusable components consuming REST APIs with Angular 2.</li>
-          <li>Integrated Spring and Hibernate for backend with Oracle DB2 connectivity via JDBC.</li>
-          <li>Deployed application in WebSphere using Ant build scripts.</li>
+          <li>Built dynamic UIs using Angular 2, TypeScript, AngularJS, HTML5/CSS3, jQuery, and AJAX for energy management applications.</li>
+          <li>Developed RESTful and SOAP web services using JAX-RS/JAX-WS with Spring JMS and Apache Camel for message routing.</li>
+          <li>Created DAO layer with Hibernate ORM for Oracle and IBM DB2 databases, including PL/SQL stored procedures.</li>
+          <li>Deployed and managed applications on IBM WebSphere using Ant build scripts.</li>
         </ul>
+        <div class="exp-techline"><span>Tech Stack:</span> Java, J2EE, Angular 2, TypeScript, AngularJS, Spring Boot, Hibernate, Oracle, IBM DB2, JMS, Apache Camel, WebSphere</div>
         <div class="exp-env">
           <span class="stag st-cyan">Java / J2EE</span><span class="stag st-cyan">Spring Boot</span>
-          <span class="stag st-purple">Angular JS</span><span class="stag st-green">Oracle</span>
-          <span class="stag st-amber">JBoss</span>
+          <span class="stag st-purple">Angular 2</span><span class="stag st-purple">TypeScript</span>
+          <span class="stag st-green">Oracle</span><span class="stag st-green">IBM DB2</span>
         </div>
       </div></div>
     </div>
@@ -539,11 +622,11 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;border
       <div class="c-icon">☎</div>
       <div><div class="c-label">Phone</div><div class="c-val">+1 (913) 318-8065</div></div>
     </a>
-    <div class="c-card">
-      <div class="c-icon">📍</div>
-      <div><div class="c-label">Location</div><div class="c-val">Chicago, IL — Remote OK</div></div>
-    </div>
-    <a href="Nagavamsi_M.docx" download class="c-card">
+    <a href="https://www.linkedin.com/in/nagavamsi532/" target="_blank" class="c-card">
+      <div class="c-icon">in</div>
+      <div><div class="c-label">LinkedIn</div><div class="c-val">linkedin.com/in/nagavamsi532</div></div>
+    </a>
+    <a href="Nagavamsi.Meduri.docx" download class="c-card">
       <div class="c-icon">📄</div>
       <div><div class="c-label">Resume</div><div class="c-val">Download .docx</div></div>
     </a>
@@ -551,7 +634,7 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;border
 </section>
 
 <footer>
-  <p>© 2025 Nagavamsi M &nbsp;·&nbsp; Full Stack Java Developer &nbsp;·&nbsp; Chicago, IL</p>
+  <p>© 2025 Nagavamsi M &nbsp;·&nbsp; Senior React Developer & Full Stack Engineer &nbsp;·&nbsp; Chicago, IL</p>
 </footer>
 
 <script>
@@ -561,8 +644,8 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;border
 document.addEventListener('mousemove',function(e){
   var ox=e.clientX/window.innerWidth-.5,oy=e.clientY/window.innerHeight-.5;
   var o1=document.querySelector('.orb1'),o2=document.querySelector('.orb2');
-  if(o1)o1.style.transform='translate('+ox*30+'px,'+oy*30+'px)';
-  if(o2)o2.style.transform='translate('+(ox*-20)+'px,'+(oy*-20)+'px)';
+  if(o1)o1.style.transform='translate('+(ox*28)+'px,'+(oy*28)+'px)';
+  if(o2)o2.style.transform='translate('+(ox*-18)+'px,'+(oy*-18)+'px)';
 });
 
 /* SCROLL REVEAL */
@@ -572,13 +655,25 @@ var obs=new IntersectionObserver(function(entries){
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
 
 /* TYPING */
-var phrases=['Spring Boot Architect','React Engineer','AWS Cloud Builder','Microservices Expert','Full Stack Developer'];
+var phrases=[
+  'React 18 + TypeScript',
+  'Redux Toolkit Architect',
+  'Node.js / Express.js',
+  'Next.js Engineering',
+  'Full Stack Developer',
+  'CI/CD & Cloud Deployments'
+];
 var pi=0,ci=0,del=false,el=document.getElementById('typed-text');
 function typeLoop(){
   var word=phrases[pi];
-  if(!del){el.textContent=word.slice(0,++ci);if(ci===word.length){del=true;setTimeout(typeLoop,1500);return}}
-  else{el.textContent=word.slice(0,--ci);if(ci===0){del=false;pi=(pi+1)%phrases.length}}
-  setTimeout(typeLoop,del?42:78);
+  if(!del){
+    el.textContent=word.slice(0,++ci);
+    if(ci===word.length){del=true;setTimeout(typeLoop,1600);return}
+  } else {
+    el.textContent=word.slice(0,--ci);
+    if(ci===0){del=false;pi=(pi+1)%phrases.length}
+  }
+  setTimeout(typeLoop,del?38:75);
 }
 typeLoop();
 
@@ -587,26 +682,31 @@ function animCount(id,target,suffix){
   var el=document.getElementById(id);if(!el)return;
   var s=0;
   var t=setInterval(function(){
-    s+=16;var p=Math.min(s/1600,1),e=1-Math.pow(1-p,3);
-    el.textContent=Math.round(e*target)+(suffix||'');
+    s+=16;var p=Math.min(s/1400,1),ease=1-Math.pow(1-p,3);
+    el.textContent=Math.round(ease*target)+(suffix||'');
     if(p>=1)clearInterval(t);
   },16);
 }
-setTimeout(function(){animCount('cnt-years',8,'+');animCount('cnt-clients',5,'');animCount('cnt-tech',15,'+')},400);
+setTimeout(function(){
+  animCount('cnt-years',8,'+');
+  animCount('cnt-clients',5,'');
+  animCount('cnt-cov',85,'+');
+  animCount('cnt-tech',20,'+');
+},500);
 
 /* ORBIT BADGES */
 var badges=[
-  {label:'Java',color:'ob-cyan',r:175,start:0},
-  {label:'Spring Boot',color:'ob-cyan',r:175,start:45},
-  {label:'React',color:'ob-purple',r:175,start:100},
-  {label:'TypeScript',color:'ob-purple',r:175,start:155},
-  {label:'AWS',color:'ob-amber',r:175,start:210},
-  {label:'Docker',color:'ob-amber',r:175,start:265},
-  {label:'Node.js',color:'ob-green',r:175,start:320},
-  {label:'MongoDB',color:'ob-green',r:125,start:20},
-  {label:'Kubernetes',color:'ob-amber',r:125,start:110},
-  {label:'Hibernate',color:'ob-cyan',r:125,start:200},
-  {label:'Oracle',color:'ob-green',r:125,start:290},
+  {label:'React',     color:'ob-purple', r:165, start:0},
+  {label:'TypeScript',color:'ob-purple', r:165, start:50},
+  {label:'Redux',     color:'ob-purple', r:165, start:105},
+  {label:'Next.js',   color:'ob-purple', r:165, start:160},
+  {label:'Node.js',   color:'ob-cyan',   r:165, start:215},
+  {label:'Express',   color:'ob-cyan',   r:165, start:268},
+  {label:'AWS',       color:'ob-amber',  r:165, start:318},
+  {label:'MongoDB',   color:'ob-green',  r:118, start:15},
+  {label:'Docker',    color:'ob-amber',  r:118, start:105},
+  {label:'Jest',      color:'ob-green',  r:118, start:195},
+  {label:'Kubernetes',color:'ob-amber',  r:118, start:285},
 ];
 var wrap=document.getElementById('orbit-wrap');
 var cx=180,cy=180;
@@ -615,7 +715,7 @@ badges.forEach(function(b,i){
   span.className='orbit-badge '+b.color;
   span.textContent=b.label;
   span.dataset.r=b.r;
-  span.dataset.speed=(b.r===175?0.18:0.28)*(i%2===0?1:-1);
+  span.dataset.speed=(b.r===165?0.16:0.26)*(i%2===0?1:-1);
   span.dataset.angle=b.start;
   wrap.appendChild(span);
 });
