@@ -1,0 +1,45 @@
+/*
+ * Theme tokens — edit colors here only.
+ * Every component reads from these variables; nothing else hard-codes a color.
+ */
+:root {
+  /* Surfaces */
+  --color-bg: #0b0e14;
+  --color-surface: #121620;
+  --color-surface-hover: #181d29;
+  --color-border: #1f2531;
+  --color-border-strong: #2d3444;
+
+  /* Text */
+  --color-heading: #f5f7fb;
+  --color-text: #d9dee8;
+  --color-text-soft: #a3acbd;
+  --color-text-muted: #7a8599;
+  --color-on-accent: #0b0e14;
+
+  /* Accents */
+  --color-primary: #5eead4;   /* teal */
+  --color-secondary: #a5b4fc; /* indigo */
+  --color-green: #86efac;
+  --color-amber: #fcd34d;
+  --color-rose: #fda4af;
+  --color-neutral: #a3acbd;
+
+  /* Typography */
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'DM Mono', monospace;
+
+  /* Layout */
+  --content-width: 1120px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+}
+
+/* Tone helpers: set --tone, then components derive tints via color-mix(). */
+.tone-primary   { --tone: var(--color-primary); }
+.tone-secondary { --tone: var(--color-secondary); }
+.tone-green     { --tone: var(--color-green); }
+.tone-amber     { --tone: var(--color-amber); }
+.tone-rose      { --tone: var(--color-rose); }
+.tone-neutral   { --tone: var(--color-neutral); }
